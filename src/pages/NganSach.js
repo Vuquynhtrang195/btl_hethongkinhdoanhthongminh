@@ -1,0 +1,12 @@
+import NavbarApp from "../components/NavbarApp";
+export default function NganSach() {
+  return (
+    <>
+      <NavbarApp />
+      <div className="page-content">
+        <h2>📊 Ngân sách</h2>
+        <p>Theo dõi và lập kế hoạch ngân sách chi tiêu.</p>
+      </div>
+    </>
+  );
+}

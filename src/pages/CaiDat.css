@@ -1,0 +1,152 @@
+.setting-page {
+  flex: 1;
+  background: #eaf6ff;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* ===================== */
+/* Thẻ form chính */
+/* ===================== */
+.setting-card {
+  background: #fff;
+  border-radius: 12px;
+  width: 520px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ===================== */
+/* Tiêu đề trên cùng */
+/* ===================== */
+.setting-title {
+  background: #f3f4f6;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e3a5f;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ===================== */
+/* Danh sách các mục */
+/* ===================== */
+.setting-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mỗi dòng cài đặt */
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* ✅ căn trái */
+  gap: 10px; /* khoảng cách icon - chữ */
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 15px;
+  color: #1e3a5f;
+  transition: background-color 0.25s ease;
+}
+
+/* 🖱 Hiệu ứng hover */
+.setting-item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Icon trái */
+.setting-item span {
+  font-size: 18px;
+  width: 28px; /* ✅ đảm bảo tất cả icon chiếm chỗ đều nhau */
+  text-align: center;
+}
+
+/* Chữ nội dung */
+.setting-item p,
+.setting-item strong {
+  margin: 0;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+}
+.setting-item:first-child strong {
+  color: #4a6aaf; /* xanh lá tươi, giống màu success trong Tailwind */
+  font-weight: 600;
+}
+
+/* ===================== */
+/* Select ngôn ngữ */
+/* ===================== */
+.lang-select {
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background-color: #f9fafb;
+  outline: none;
+  font-size: 14px;
+}
+
+/* ===================== */
+/* Hàng chứa các nút dưới cùng */
+/* ===================== */
+.setting-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  padding: 16px 28px;
+  border-top: 1px solid #e5e7eb;
+  gap: 30px;
+}
+
+/* ===================== */
+/* Nút */
+/* ===================== */
+.btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+  min-width: 110px;
+  text-align: center;
+}
+
+.btn-logout {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-logout:hover {
+  background-color: #2563eb;
+}
+
+.btn-switch {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-switch:hover {
+  background-color: #dc2626;
+}
+
+/* ===================== */
+/* Animation */
+/* ===================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

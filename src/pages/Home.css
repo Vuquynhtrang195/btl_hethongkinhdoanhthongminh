@@ -1,0 +1,38 @@
+.dash-wrap {
+  padding: 22px 0 42px;
+}
+.dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.metric {
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(17, 45, 78, 0.06);
+}
+.metric h4 {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+.metric .val {
+  font-size: 22px;
+  font-weight: 700;
+}
+.chart-box {
+  margin-top: 16px;
+}
+@media (max-width: 768px) {
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+}

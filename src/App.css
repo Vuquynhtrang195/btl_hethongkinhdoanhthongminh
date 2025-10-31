@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+.app-layout {
+  display: flex;
+}
+.main-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 220px; /* Để chừa chỗ cho sidebar */
+  background-color: #eaf6ff;
+  min-height: 100vh;
+}
+
+.page-content h2 {
+  color: #1e3a5f;
+  margin-bottom: 10px;
+}
