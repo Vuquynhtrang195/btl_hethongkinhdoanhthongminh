@@ -1,0 +1,153 @@
+.thu-chi-container {
+  background: linear-gradient(135deg, #ffe6f0, #e7faff);
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 28px;
+  color: #1e3a5f;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.forms-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.form-card {
+  width: 340px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 25px;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+
+.form-card:hover {
+  transform: translateY(-4px);
+}
+
+.form-card h3 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.form-group input {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #0077ff;
+}
+
+.btn-expense {
+  width: 100%;
+  background: #ff6f91;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-expense:hover {
+  background: #ff4f7a;
+}
+
+.btn-income {
+  width: 100%;
+  background: #4cd964;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-income:hover {
+  background: #37c451;
+}
+
+.expense-card {
+  border-top: 6px solid #ff6f91;
+}
+
+.income-card {
+  border-top: 6px solid #4cd964;
+}
+/* ============================= */
+/* 🔔 Hiển thị thông báo thành công */
+/* ============================= */
+.notify-box {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  animation: fadeInOut 2.5s ease forwards;
+  color: white;
+}
+
+.notify-box.thu {
+  background: #4cd964;
+}
+
+.notify-box.chi {
+  background: #ff6f91;
+}
+
+.notify-box.warning {
+  background: #f59e0b;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
