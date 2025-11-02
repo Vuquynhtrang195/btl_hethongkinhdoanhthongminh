@@ -41,9 +41,9 @@
 }
 .main-content {
   flex: 1;
-  padding: 30px;
+
   margin-left: 220px; /* Để chừa chỗ cho sidebar */
-  background-color: #eaf6ff;
+
   min-height: 100vh;
 }
 

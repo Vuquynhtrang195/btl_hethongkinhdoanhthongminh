@@ -30,10 +30,13 @@ function App() {
   return (
     <Router>
       <div className="app-layout">
+        {/* Hiện Sidebar nếu đã đăng nhập */}
         {token && <Sidebar />}
+
         <div className="main-content">
           <Routes>
             {token ? (
+              // ====== ĐÃ ĐĂNG NHẬP ======
               <>
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/thuchi" element={<ThuChi />} />
@@ -41,14 +44,20 @@ function App() {
                 <Route path="/nhacnho" element={<NhacNho />} />
                 <Route path="/ngansach" element={<NganSach />} />
                 <Route path="/caidat" element={<CaiDat />} />
-                <Route path="*" element={<Navigate to="/" />} />
+
+                {/* Nếu user gõ sai đường dẫn thì tự quay về Dashboard */}
+                <Route path="*" element={<Navigate to="/" replace />} />
               </>
             ) : (
+              // ====== CHƯA ĐĂNG NHẬP ======
               <>
+                <Route path="/" element={<Navigate to="/login" replace />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="*" element={<Navigate to="/login" />} />
+
+                {/* Nếu gõ link linh tinh thì về trang login */}
+                <Route path="*" element={<Navigate to="/login" replace />} />
               </>
             )}
           </Routes>

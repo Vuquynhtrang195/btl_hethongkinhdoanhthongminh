@@ -164,6 +164,16 @@
   border-radius: 10px;
 }
 
+/* === KHỐI ĐƯỢC THÊM VÀO === */
+.transaction-item .left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1; /* Cho phép chiếm không gian để đẩy số tiền qua phải */
+  padding-right: 10px; /* Thêm một chút đệm để không bị dính vào số tiền */
+}
+/* ========================== */
+
 .transaction-item .left strong {
   color: #333;
   font-size: 15px;
