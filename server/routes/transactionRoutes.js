@@ -1,22 +1,22 @@
 import express from "express";
 import Transaction from "../models/Transaction.js";
+import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
 // 📍 GET: Lấy danh sách giao dịch
-router.get("/", async (req, res) => {
+router.get("/", authMiddleware, async (req, res) => {
   try {
-    const list = await Transaction.find().sort({ date: -1 });
-    res.json(list);
+    const transactions = await Transaction.find({ userId: req.user.id }).sort({
+      date: -1,
+    });
+    res.json(transactions);
   } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Lỗi khi lấy dữ liệu", error: err.message });
+    res.status(500).json({ message: err.message });
   }
 });
-
 // 📍 POST: Thêm giao dịch mới
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
   try {
     console.log("📩 Dữ liệu nhận được:", req.body);
 
@@ -31,7 +31,8 @@ router.post("/", async (req, res) => {
       category,
       amount,
       desc,
-      date: new Date(date), // ép về Date thật
+      date,
+      userId: req.user.id, // ✅ Giờ middleware sẽ gắn được user id thật
     });
 
     await newTx.save();
@@ -39,6 +40,21 @@ router.post("/", async (req, res) => {
     res.status(201).json(newTx);
   } catch (err) {
     console.error("🔥 Lỗi khi lưu giao dịch:", err);
+    res.status(500).json({ message: err.message });
+  }
+});
+router.delete("/:id", authMiddleware, async (req, res) => {
+  try {
+    const deleted = await Transaction.findOneAndDelete({
+      _id: req.params.id,
+      userId: req.user.id,
+    });
+    if (!deleted)
+      return res
+        .status(404)
+        .json({ message: "Không tìm thấy hoặc không có quyền xóa!" });
+    res.json({ message: "Đã xóa thành công!" });
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });

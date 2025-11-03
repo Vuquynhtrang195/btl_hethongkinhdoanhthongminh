@@ -40,7 +40,14 @@ export default function ThuChi() {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/transactions", newTx);
+      const token = localStorage.getItem("token"); // 👈 Lấy token từ localStorage
+
+      await axios.post("http://localhost:5000/api/transactions", newTx, {
+        headers: {
+          Authorization: `Bearer ${token}`, // 👈 Gửi token trong header
+        },
+      });
+
       showNotify(
         type === "chi"
           ? "💸 Đã thêm chi tiêu thành công!"
