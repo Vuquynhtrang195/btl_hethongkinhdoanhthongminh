@@ -1,0 +1,73 @@
+.dashboard-page {
+  padding: 25px;
+  background: linear-gradient(180deg, #f9f9ff, #e7faff);
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+.dashboard-page h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.card {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column; /* Stack h3 and p */
+  gap: 8px; /* Space between h3 and p */
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-size: 16px;
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Match SoGiaoDich summary cards */
+.card.income {
+  background: #eaffef;
+}
+.card.income p {
+  color: #00a86b;
+}
+
+.card.expense {
+  background: #ffeaf1;
+}
+.card.expense p {
+  color: #ff4f6f;
+}
+
+.card.balance {
+  background: #eaf4ff;
+}
+.card.balance p {
+  color: #1e3a5f;
+}
