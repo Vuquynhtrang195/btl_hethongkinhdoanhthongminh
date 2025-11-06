@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import NavbarApp from "../components/NavbarApp";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import "./ThuChi.css";
 
 export default function ThuChi() {
+  const { t } = useTranslation();
   const [expense, setExpense] = useState({
     amount: "",
     category: "",
@@ -29,7 +31,7 @@ export default function ThuChi() {
     const data = type === "chi" ? expense : income;
 
     if (!data.amount || !data.category)
-      return showNotify("⚠️ Nhập đủ thông tin nhé!", "warning");
+      return showNotify(t("toast.fill_info"), "warning");
 
     const newTx = {
       type,
@@ -50,8 +52,8 @@ export default function ThuChi() {
 
       showNotify(
         type === "chi"
-          ? "💸 Đã thêm chi tiêu thành công!"
-          : "💰 Đã thêm thu nhập thành công!",
+          ? t("toast.add_expense_success")
+          : t("toast.add_income_success"),
         type
       );
 
@@ -72,7 +74,7 @@ export default function ThuChi() {
         });
     } catch (err) {
       console.error(err);
-      showNotify("❌ Lỗi khi lưu vào MongoDB!", "error");
+      showNotify(t("toast.save_fail"), "error");
     }
   };
 
@@ -86,51 +88,48 @@ export default function ThuChi() {
       )}
 
       <div className="thu-chi-container">
-        <h2 className="page-title">💸 Quản lý Thu & Chi</h2>
-        <p className="subtitle">
-          Ghi lại thu nhập và chi tiêu của bạn mỗi ngày để theo dõi tài chính
-          thông minh hơn.
-        </p>
+        <h2 className="page-title">💸 {t("page.income_expense")}</h2>
+        <p className="subtitle">{t("ie.subtitle")}</p>
 
         <div className="forms-grid">
           {/* ===== Chi tiêu ===== */}
           <div className="form-card expense-card">
-            <h3>Chi tiêu</h3>
+            <h3>{t("ie.expense_type")}</h3>
             <div className="form-group">
-              <label>Số tiền (VND)</label>
+              <label>{t("ie.amount_vnd")}</label>
               <input
                 type="number"
                 value={expense.amount}
                 onChange={(e) =>
                   setExpense({ ...expense, amount: e.target.value })
                 }
-                placeholder="Nhập số tiền..."
+                placeholder={t("ie.amount_placeholder")}
               />
             </div>
             <div className="form-group">
-              <label>Thể loại</label>
+              <label>{t("ie.category")}</label>
               <input
                 type="text"
                 value={expense.category}
                 onChange={(e) =>
                   setExpense({ ...expense, category: e.target.value })
                 }
-                placeholder="Ăn uống, đi lại, mua sắm..."
+                placeholder={t("ie.category_placeholder_expense")}
               />
             </div>
             <div className="form-group">
-              <label>Mô tả</label>
+              <label>{t("ie.description")}</label>
               <input
                 type="text"
                 value={expense.desc}
                 onChange={(e) =>
                   setExpense({ ...expense, desc: e.target.value })
                 }
-                placeholder="Ghi chú thêm..."
+                placeholder={t("ie.note_placeholder")}
               />
             </div>
             <div className="form-group">
-              <label>Ngày</label>
+              <label>{t("ie.date")}</label>
               <input
                 type="date"
                 value={expense.date}
@@ -140,46 +139,46 @@ export default function ThuChi() {
               />
             </div>
             <button className="btn-expense" onClick={() => handleAdd("chi")}>
-              ➕ Thêm chi tiêu
+              ➕ {t("ie.add_expense")}
             </button>
           </div>
 
           {/* ===== Thu nhập ===== */}
           <div className="form-card income-card">
-            <h3>Thu nhập</h3>
+            <h3>{t("ie.income_type")}</h3>
             <div className="form-group">
-              <label>Số tiền (VND)</label>
+              <label>{t("ie.amount_vnd")}</label>
               <input
                 type="number"
                 value={income.amount}
                 onChange={(e) =>
                   setIncome({ ...income, amount: e.target.value })
                 }
-                placeholder="Nhập số tiền..."
+                placeholder={t("ie.amount_placeholder")}
               />
             </div>
             <div className="form-group">
-              <label>Nguồn thu</label>
+              <label>{t("ie.source")}</label>
               <input
                 type="text"
                 value={income.category}
                 onChange={(e) =>
                   setIncome({ ...income, category: e.target.value })
                 }
-                placeholder="Lương, thưởng, freelance..."
+                placeholder={t("ie.category_placeholder_income")}
               />
             </div>
             <div className="form-group">
-              <label>Mô tả</label>
+              <label>{t("ie.description")}</label>
               <input
                 type="text"
                 value={income.desc}
                 onChange={(e) => setIncome({ ...income, desc: e.target.value })}
-                placeholder="Ghi chú thêm..."
+                placeholder={t("ie.note_placeholder")}
               />
             </div>
             <div className="form-group">
-              <label>Ngày</label>
+              <label>{t("ie.date")}</label>
               <input
                 type="date"
                 value={income.date}
@@ -187,7 +186,7 @@ export default function ThuChi() {
               />
             </div>
             <button className="btn-income" onClick={() => handleAdd("thu")}>
-              ➕ Thêm thu nhập
+              ➕ {t("ie.add_income")}
             </button>
           </div>
         </div>

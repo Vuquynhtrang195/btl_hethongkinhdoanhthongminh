@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import "./CaiDat.css";
 import NavbarApp from "../components/NavbarApp";
@@ -6,7 +7,12 @@ import NavbarApp from "../components/NavbarApp";
 export default function CaiDat() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
+  const handleLanguageChange = (event) => {
+    const newLanguage = event.target.value;
+    i18n.changeLanguage(newLanguage);
+  };
   // ✅ Gọi API lấy thông tin người dùng
   useEffect(() => {
     const fetchUser = async () => {
@@ -44,37 +50,43 @@ export default function CaiDat() {
       <NavbarApp showUser={false} />
       <div className="page-content setting-page">
         <div className="setting-card">
-          <h2 className="setting-title">⚙️ Cài đặt</h2>
+          <h2 className="setting-title">⚙️ {t("settings.title")}</h2>
 
           <div className="setting-section">
             <div className="setting-item">
               <span>👤</span>
-              <strong>{user ? user.name : "Đang tải..."}</strong>
+              <strong>{user ? user.name : t("status.loading")}</strong>
             </div>
             <div className="setting-item clickable">
               <span>🔒</span>
-              <p>Tài khoản và bảo mật</p>
+              <p>{t("settings.account_security")}</p>
             </div>
             <div className="setting-item">
               <span>❓</span>
-              <p>Trung tâm trợ giúp</p>
+              <p>{t("settings.help_center")}</p>
             </div>
 
             <div className="setting-item">
               <span>🌐</span>
-              <p>Ngôn ngữ</p>
-              <select className="lang-select">
-                <option value="vi">VI</option>
-                <option value="en">EN</option>
+              <p>{t("settings.language")}</p>
+              <select
+                className="lang-select"
+                onChange={handleLanguageChange}
+                value={i18n.language}
+              >
+                <option value="vi">{t("languages.vi_short")}</option>
+                <option value="en">{t("languages.en_short")}</option>
               </select>
             </div>
           </div>
 
           <div className="setting-actions">
             <button className="btn btn-logout" onClick={handleLogout}>
-              Đăng xuất
+              {t("actions.logout")}
             </button>
-            <button className="btn btn-switch">Chuyển tài khoản</button>
+            <button className="btn btn-switch">
+              {t("actions.switch_account")}
+            </button>
           </div>
         </div>
       </div>
