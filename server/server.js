@@ -49,3 +49,6 @@ app.use((err, req, res, next) => {
 app.listen(5000, () => {
   console.log("🚀 Server chạy tại cổng 5000");
 });
+
+import transactionUploadRoutes from "./routes/transactionUploadRoutes.js";
+app.use("/api/transactions", transactionUploadRoutes);

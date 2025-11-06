@@ -13,6 +13,7 @@ export default function Sidebar() {
     { path: "/sogiaodich", key: "navigation.transactions", icon: "💰" },
     { path: "/nhacnho", key: "navigation.reminders", icon: "🔔" },
     { path: "/ngansach", key: "navigation.budget", icon: "📊" },
+    { path: "/import", key: "Import CSV" , icon: "📂"},
     { path: "/caidat", key: "navigation.settings", icon: "⚙️" },
   ];
 
