@@ -1,0 +1,17 @@
+.nhac-nho-page {
+  padding: 25px;
+  background: linear-gradient(180deg, #f9f9ff, #e7faff);
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.nhac-nho-page h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e3a5f;
+}
+
+.nhac-nho-page p {
+  color: #555;
+}

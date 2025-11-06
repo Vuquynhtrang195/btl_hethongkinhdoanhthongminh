@@ -1,0 +1,179 @@
+/* D:\btl_hethongkinhdoanhthongminh-main\src\pages\CaiDat.css */
+
+/* ===================== */
+/* BỐ CỤC CHÍNH TRANG CÀI ĐẶT */
+/* ===================== */
+.page-content.setting-page-with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  box-sizing: border-box;
+  
+}
+
+.setting-content {
+  flex: 1;
+  padding: 25px;
+  background: linear-gradient(180deg, #f9f9ff, #e7faff);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  min-width: 300px; /* ✅ Đảm bảo khi thu nhỏ không bị tràn */
+}
+
+/* ===================== */
+/* FORM CÀI ĐẶT */
+/* ===================== */
+.setting-card {
+    background: #fff;
+    border-radius: 16px;
+    width: 520px;
+    max-width: 100%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    animation: fadeIn 0.4s ease;
+    margin: 0 auto;
+}
+
+/* ===================== */
+/* TIÊU ĐỀ TRÊN CÙNG */
+/* ===================== */
+.setting-title {
+    background: #f8fbff;
+    text-align: center;
+    padding: 16px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a5f;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ===================== */
+/* DANH SÁCH MỤC CÀI ĐẶT */
+/* ===================== */
+.setting-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 16px 22px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+    color: #1e3a5f;
+    transition: background-color 0.25s ease;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+/* Hiệu ứng hover */
+.setting-item.clickable:hover {
+    background-color: #f8fbff;
+    cursor: pointer;
+}
+
+/* Icon trái */
+.setting-item span {
+    font-size: 20px;
+    width: 28px;
+    text-align: center;
+}
+
+/* Nội dung chữ */
+.setting-item p,
+.setting-item strong {
+    margin: 0;
+    font-weight: 500;
+    flex: 1;
+    text-align: left;
+    color: inherit;
+}
+
+.setting-item:first-child strong {
+    color: #00a86b;
+    font-weight: 600;
+}
+
+/* ===================== */
+/* SELECT NGÔN NGỮ */
+/* ===================== */
+.lang-select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: #fff;
+    outline: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.lang-select:hover {
+    border-color: #4cd964;
+}
+
+/* ===================== */
+/* HÀNG NÚT DƯỚI CÙNG */
+/* ===================== */
+.setting-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9fafb;
+    padding: 16px 28px;
+    border-top: 1px solid #e5e7eb;
+    gap: 20px;
+}
+
+/* ===================== */
+/* NÚT */
+/* ===================== */
+.setting-actions .btn {
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+    text-align: center;
+}
+
+.btn-logout {
+    background-color: #ff6f91;
+    color: white;
+}
+
+.btn-logout:hover {
+    background-color: #ff4f7a;
+}
+
+.btn-switch {
+    background-color: #6b7280;
+    color: white;
+}
+
+.btn-switch:hover {
+    background-color: #5a6470;
+}
+
+/* ===================== */
+/* ANIMATION */
+/* ===================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

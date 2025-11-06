@@ -1,0 +1,101 @@
+{
+  "app": {
+    "title": "Smart Finance"
+  },
+  "navigation": {
+    "dashboard": "Tổng Quan",
+    "income_expense": "Thu chi",
+    "transactions": "Sổ giao dịch",
+    "reminders": "Nhắc nhở",
+    "budget": "Ngân sách",
+    "chatbot": "Chatbot AI",
+    "settings": "Cài đặt"
+  },
+  "chatbot": {
+    "welcome": "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?",
+    "placeholder": "Nhập tin nhắn của bạn...",
+    "send": "Gửi"
+  },
+  "page": {
+    "dashboard": "Tổng Quan Tài Chính",
+    "transactions": "Sổ Giao Dịch",
+    "income_expense": "Quản lý Thu & Chi",
+    "reminders": "Nhắc Nhở & Lịch",
+    "budget": "Thiết Lập Ngân Sách"
+  },
+  "dashboard": {
+    "total_balance": "Tổng Số Dư",
+    "monthly_summary": "Báo cáo thu chi",
+    "income": "Thu nhập",
+    "expense": "Chi tiêu",
+    "recent_transactions": "Giao dịch gần đây"
+  },
+  "ie": {
+    "subtitle": "Ghi lại thu nhập và chi tiêu của bạn mỗi ngày để theo dõi tài chính thông minh hơn.",
+    "amount_vnd": "Số tiền (VND)",
+    "amount_placeholder": "Nhập số tiền...",
+    "category": "Thể loại",
+    "category_placeholder_expense": "Ăn uống, đi lại, mua sắm...",
+    "description": "Mô tả",
+    "note_placeholder": "Ghi chú thêm...",
+    "date": "Ngày",
+    "income_type": "Thu nhập",
+    "expense_type": "Chi tiêu",
+    "add_expense": "Thêm chi tiêu",
+    "add_income": "Thêm thu nhập",
+    "source": "Nguồn thu",
+    "category_placeholder_income": "Lương, thưởng, freelance...",
+    "add_transaction": "Thêm Giao dịch",
+    "type": "Loại",
+    "note": "Ghi chú"
+  },
+  "sgd": {
+    "month": "Tháng",
+    "year": "Năm",
+    "balance": "Số dư",
+    "no_transactions": "Không có giao dịch trong tháng này 😅",
+    "no_note": "Không có ghi chú"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "account_security": "Tài khoản và bảo mật",
+    "help_center": "Trung tâm trợ giúp",
+    "language": "Ngôn ngữ"
+  },
+  "actions": {
+    "title": "Hành động",
+    "logout": "Đăng xuất",
+    "switch_account": "Chuyển tài khoản",
+    "update_transaction": "Cập nhật Giao dịch",
+    "update": "Cập nhật",
+    "cancel": "Hủy"
+  },
+  "status": {
+    "loading": "Đang tải...",
+    "loading_data": "⏳ Đang tải dữ liệu...",
+    "error": "⚠️ Lỗi: {{error}}",
+    "error_ai": "Xin lỗi, tôi đang gặp sự cố. Vui lòng thử lại sau.",
+    "in_development": "Tính năng đang được phát triển."
+  },
+  "toast": {
+    "fill_info": "⚠️ Nhập đủ thông tin nhé!",
+    "add_expense_success": "💸 Đã thêm chi tiêu thành công!",
+    "add_income_success": "💰 Đã thêm thu nhập thành công!",
+    "save_fail": "❌ Lỗi khi lưu vào MongoDB!",
+    "add_success": "Thêm giao dịch thành công!",
+    "add_fail": "Thêm giao dịch thất bại.",
+    "fetch_fail": "Không thể tải giao dịch.",
+    "delete_success": "Đã xóa giao dịch.",
+    "delete_fail": "Xóa giao dịch thất bại.",
+    "update_success": "Cập nhật thành công!",
+    "update_fail": "Cập nhật thất bại."
+  },
+  "confirm": {
+    "delete": "Bạn có chắc chắn muốn xóa giao dịch này?"
+  },
+  "languages": {
+    "vi_short": "VI",
+    "en_short": "EN"
+  }
+  
+}
