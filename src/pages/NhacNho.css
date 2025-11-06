@@ -1,0 +1,119 @@
+.nhacnho-page {
+  background-color: #fdf7ff;
+  min-height: 100vh;
+}
+
+.nhacnho-container {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+.google-connect {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.btn-connect {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-connect:hover {
+  background-color: #3367d6;
+}
+
+.reminder-form input,
+.reminder-form textarea,
+.reminder-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-add {
+  width: 100%;
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-add:hover {
+  background-color: #d81b60;
+}
+
+.reminder-list {
+  margin-top: 25px;
+}
+
+.reminder-card {
+  background: #fce4ec;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.reminder-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  background: #f06292;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.btn-delete {
+  background: #ff4081;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.btn-delete:hover {
+  background: #e91e63;
+}
+
+.no-reminder {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

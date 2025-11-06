@@ -1,0 +1,52 @@
+.navbar-app {
+  position: fixed; /* Dán cố định trên đầu */
+  top: 0;
+  left: 220px; /* ✅ bằng đúng chiều rộng sidebar */
+  right: 0;
+  height: 60px;
+
+  background: linear-gradient(180deg, #7aa9f8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 35px;
+  border-bottom: 1px solid #c5d7ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  z-index: 1000; /* luôn nằm trên cùng */
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #1e3a5f;
+  font-size: 15px;
+}
+
+.user-icon {
+  font-size: 18px;
+}
+
+.user-name {
+  padding: 5px 13px;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+/* ✅ để tránh nội dung bị Navbar che mất */
+.page-content {
+  margin-top: 70px;
+  padding: 20px;
+}
+.user-icon {
+  font-size: 30px;
+  color: #f5f6f8; /* xanh tím nhẹ giống hình bạn gửi */
+}
