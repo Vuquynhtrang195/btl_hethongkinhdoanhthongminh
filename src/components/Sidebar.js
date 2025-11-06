@@ -10,6 +10,7 @@ export default function Sidebar() {
     { path: "/sogiaodich", label: "💰 Sổ giao dịch" },
     { path: "/nhacnho", label: "🔔 Nhắc nhở" },
     { path: "/ngansach", label: "📊 Ngân sách" },
+    { path: "/du-doan", label: "🤖 Dự đoán AI" }, // thêm mục mới
     { path: "/caidat", label: "⚙️ Cài đặt" },
   ];
 

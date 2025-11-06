@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import transactionRoutes from "./routes/transactionRoutes.js";
 import calendarRoutes from "./routes/calendarRoutes.js";
+import budgetRoutes from "./routes/budgetRoutes.js";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
 
 dotenv.config();
 
@@ -34,6 +36,8 @@ mongoose
 app.use("/api", userRoutes); // login / register
 app.use("/api/transactions", transactionRoutes); // giao dịch
 app.use("/api/calendar", calendarRoutes); // Google Calendar
+app.use("/api/budgets", budgetRoutes);
+app.use("/api/dashboard", dashboardRoutes);
 
 // ====== MIDDLEWARE XỬ LÝ LỖI ======
 app.use((err, req, res, next) => {
