@@ -14,7 +14,7 @@ export default function ImportCSVServer() {
 
     try {
       setMsg("Đang tải...");
-      const res = await axios.post("http://localhost:5000/api/transactions/upload", form, {
+      const res = await axios.post("http://localhost:5000/api/transaction/upload", form, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
