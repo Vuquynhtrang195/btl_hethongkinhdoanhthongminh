@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).json({ message: "Sai mật khẩu!" });
 
-    const token = jwt.sign({ id: user._id }, "secret123", { expiresIn: "1d" });
+    const token = jwt.sign({ id: user._id }, "secret123", { expiresIn: "7d" });
 
     res.json({ message: "Đăng nhập thành công", token });
   } catch (err) {

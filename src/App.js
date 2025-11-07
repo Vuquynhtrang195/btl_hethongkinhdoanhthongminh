@@ -14,6 +14,7 @@ import CaiDat from "./pages/CaiDat";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
+import Chatbot from "./components/Chatbot";
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -62,6 +63,8 @@ function App() {
             )}
           </Routes>
         </div>
+        {/* 👈 Thêm dòng này: Hiện Chatbot nếu đã đăng nhập */}
+        {token && <Chatbot />}
       </div>
     </Router>
   );

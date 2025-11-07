@@ -1,0 +1,678 @@
+{
+  "settings": {
+    "languages": [
+      "vi"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "executeActionsBeforeAnswers": false,
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "vi"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "vi": {
+        "settings": {
+          "locale": "vi",
+          "trainByDomain": false,
+          "tag": "domain-manager-vi",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "chao": {
+            "intent": "intent.greeting",
+            "domain": "default"
+          },
+          "ban,chao": {
+            "intent": "intent.greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "intent.greeting",
+            "domain": "default"
+          },
+          "giup": {
+            "intent": "intent.help",
+            "domain": "default"
+          },
+          "ban,gi,lam,đuoc": {
+            "intent": "intent.help",
+            "domain": "default"
+          },
+          "menu": {
+            "intent": "intent.help",
+            "domain": "default"
+          },
+          "bao,cao": {
+            "intent": "intent.report.summary",
+            "domain": "default"
+          },
+          "bao,cao,chi,tieu,tong": {
+            "intent": "intent.report.summary",
+            "domain": "default"
+          },
+          "chinh,hinh,tai,tinh": {
+            "intent": "intent.report.summary",
+            "domain": "default"
+          },
+          "dich,giao": {
+            "intent": "intent.report.transactions",
+            "domain": "default"
+          },
+          "3,dich,giao,moi,nhat": {
+            "intent": "intent.report.transactions",
+            "domain": "default"
+          },
+          "cac,dich,gan,giao,đay": {
+            "intent": "intent.report.transactions",
+            "domain": "default"
+          },
+          "chi,tieu": {
+            "intent": "intent.report.expenses",
+            "domain": "default"
+          },
+          "chi,tieu,tong": {
+            "intent": "intent.report.expenses",
+            "domain": "default"
+          },
+          "bao,dao,nay,nhieu,tieu": {
+            "intent": "intent.report.expenses",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "intent.greeting": "default",
+          "intent.help": "default",
+          "intent.report.summary": "default",
+          "intent.report.transactions": "default",
+          "intent.report.expenses": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "chào",
+            "intent": "intent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "chào bạn",
+            "intent": "intent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "hi",
+            "intent": "intent.greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "giúp",
+            "intent": "intent.help"
+          },
+          {
+            "domain": "default",
+            "utterance": "bạn làm được gì",
+            "intent": "intent.help"
+          },
+          {
+            "domain": "default",
+            "utterance": "menu",
+            "intent": "intent.help"
+          },
+          {
+            "domain": "default",
+            "utterance": "báo cáo",
+            "intent": "intent.report.summary"
+          },
+          {
+            "domain": "default",
+            "utterance": "báo cáo tổng chi tiêu",
+            "intent": "intent.report.summary"
+          },
+          {
+            "domain": "default",
+            "utterance": "tình hình tài chính",
+            "intent": "intent.report.summary"
+          },
+          {
+            "domain": "default",
+            "utterance": "giao dịch",
+            "intent": "intent.report.transactions"
+          },
+          {
+            "domain": "default",
+            "utterance": "3 giao dịch mới nhất",
+            "intent": "intent.report.transactions"
+          },
+          {
+            "domain": "default",
+            "utterance": "các giao dịch gần đây",
+            "intent": "intent.report.transactions"
+          },
+          {
+            "domain": "default",
+            "utterance": "chi tiêu",
+            "intent": "intent.report.expenses"
+          },
+          {
+            "domain": "default",
+            "utterance": "tổng chi tiêu",
+            "intent": "intent.report.expenses"
+          },
+          {
+            "domain": "default",
+            "utterance": "dạo này tiêu bao nhiêu",
+            "intent": "intent.report.expenses"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "vi",
+              "tag": "nlu-vi",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "3": 1,
+              "chao": 1,
+              "ban": 1,
+              "hi": 1,
+              "giup": 1,
+              "lam": 1,
+              "đuoc": 1,
+              "gi": 1,
+              "menu": 1,
+              "bao": 1,
+              "cao": 1,
+              "tong": 1,
+              "chi": 1,
+              "tieu": 1,
+              "tinh": 1,
+              "hinh": 1,
+              "tai": 1,
+              "chinh": 1,
+              "giao": 1,
+              "dich": 1,
+              "moi": 1,
+              "nhat": 1,
+              "cac": 1,
+              "gan": 1,
+              "đay": 1,
+              "dao": 1,
+              "nay": 1,
+              "nhieu": 1
+            },
+            "intents": {
+              "intent.greeting": 1,
+              "intent.help": 1,
+              "intent.report.summary": 1,
+              "intent.report.transactions": 1,
+              "intent.report.expenses": 1
+            },
+            "intentFeatures": {
+              "intent.greeting": {
+                "chao": 1,
+                "ban": 1,
+                "hi": 1
+              },
+              "intent.help": {
+                "giup": 1,
+                "ban": 1,
+                "lam": 1,
+                "đuoc": 1,
+                "gi": 1,
+                "menu": 1
+              },
+              "intent.report.summary": {
+                "bao": 1,
+                "cao": 1,
+                "tong": 1,
+                "chi": 1,
+                "tieu": 1,
+                "tinh": 1,
+                "hinh": 1,
+                "tai": 1,
+                "chinh": 1
+              },
+              "intent.report.transactions": {
+                "3": 1,
+                "giao": 1,
+                "dich": 1,
+                "moi": 1,
+                "nhat": 1,
+                "cac": 1,
+                "gan": 1,
+                "đay": 1
+              },
+              "intent.report.expenses": {
+                "chi": 1,
+                "tieu": 1,
+                "tong": 1,
+                "dao": 1,
+                "nay": 1,
+                "bao": 1,
+                "nhieu": 1
+              }
+            },
+            "featuresToIntent": {
+              "3": [
+                "intent.report.transactions"
+              ],
+              "chao": [
+                "intent.greeting"
+              ],
+              "ban": [
+                "intent.greeting",
+                "intent.help"
+              ],
+              "hi": [
+                "intent.greeting"
+              ],
+              "giup": [
+                "intent.help"
+              ],
+              "lam": [
+                "intent.help"
+              ],
+              "đuoc": [
+                "intent.help"
+              ],
+              "gi": [
+                "intent.help"
+              ],
+              "menu": [
+                "intent.help"
+              ],
+              "bao": [
+                "intent.report.summary",
+                "intent.report.expenses"
+              ],
+              "cao": [
+                "intent.report.summary"
+              ],
+              "tong": [
+                "intent.report.summary",
+                "intent.report.expenses"
+              ],
+              "chi": [
+                "intent.report.summary",
+                "intent.report.expenses"
+              ],
+              "tieu": [
+                "intent.report.summary",
+                "intent.report.expenses"
+              ],
+              "tinh": [
+                "intent.report.summary"
+              ],
+              "hinh": [
+                "intent.report.summary"
+              ],
+              "tai": [
+                "intent.report.summary"
+              ],
+              "chinh": [
+                "intent.report.summary"
+              ],
+              "giao": [
+                "intent.report.transactions"
+              ],
+              "dich": [
+                "intent.report.transactions"
+              ],
+              "moi": [
+                "intent.report.transactions"
+              ],
+              "nhat": [
+                "intent.report.transactions"
+              ],
+              "cac": [
+                "intent.report.transactions"
+              ],
+              "gan": [
+                "intent.report.transactions"
+              ],
+              "đay": [
+                "intent.report.transactions"
+              ],
+              "dao": [
+                "intent.report.expenses"
+              ],
+              "nay": [
+                "intent.report.expenses"
+              ],
+              "nhieu": [
+                "intent.report.expenses"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "vi",
+                "tag": "nlu-vi",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "chao",
+                "ban",
+                "hi",
+                "giup",
+                "lam",
+                "đuoc",
+                "gi",
+                "menu",
+                "bao",
+                "cao",
+                "tong",
+                "chi",
+                "tieu",
+                "tinh",
+                "hinh",
+                "tai",
+                "chinh",
+                "giao",
+                "dich",
+                "3",
+                "moi",
+                "nhat",
+                "cac",
+                "gan",
+                "đay",
+                "dao",
+                "nay",
+                "nhieu"
+              ],
+              "intents": [
+                "intent.greeting",
+                "intent.help",
+                "intent.report.summary",
+                "intent.report.transactions",
+                "intent.report.expenses"
+              ],
+              "perceptrons": [
+                [
+                  10.410979270935059,
+                  0.7070058584213257,
+                  10.760079383850098,
+                  -3.354358196258545,
+                  -1.8135480880737305,
+                  -1.8135480880737305,
+                  -1.8135480880737305,
+                  -3.3406012058258057,
+                  -1.8059718608856201,
+                  -1.6038559675216675,
+                  -0.49295419454574585,
+                  -1.6027668714523315,
+                  -1.8048834800720215,
+                  -0.8544340133666992,
+                  -0.8544340133666992,
+                  -0.8544340133666992,
+                  -0.8544340133666992,
+                  -1.7042901515960693,
+                  -1.7042901515960693,
+                  -0.24488776922225952,
+                  -0.24488776922225952,
+                  -0.24488776922225952,
+                  -0.23233571648597717,
+                  -0.23233571648597717,
+                  -0.23233571648597717,
+                  -0.1872793585062027,
+                  -0.1872793585062027,
+                  -0.1872793585062027,
+                  3.4204895102641424
+                ],
+                [
+                  -4.311050891876221,
+                  0.2049027383327484,
+                  -3.9868087768554688,
+                  10.099833488464355,
+                  3.322037935256958,
+                  3.322037935256958,
+                  3.322037935256958,
+                  10.091133117675781,
+                  -2.1733291149139404,
+                  -1.9404035806655884,
+                  -0.5699658989906311,
+                  -1.9397821426391602,
+                  -2.1727068424224854,
+                  -1.0290579795837402,
+                  -1.0290579795837402,
+                  -1.0290579795837402,
+                  -1.0290579795837402,
+                  -2.056541681289673,
+                  -2.056541681289673,
+                  -0.2847669720649719,
+                  -0.2847669720649719,
+                  -0.2847669720649719,
+                  -0.25801151990890503,
+                  -0.25801151990890503,
+                  -0.25801151990890503,
+                  -0.21666258573532104,
+                  -0.21666258573532104,
+                  -0.21666258573532104,
+                  4.116304147048995
+                ],
+                [
+                  -0.8322590589523315,
+                  -0.4870013892650604,
+                  -0.75656658411026,
+                  -0.7475331425666809,
+                  -0.21235720813274384,
+                  -0.21235720813274384,
+                  -0.21235720813274384,
+                  -0.7383627891540527,
+                  6.104857921600342,
+                  7.798923492431641,
+                  1.2249937057495117,
+                  0.036426179111003876,
+                  -1.6576368808746338,
+                  3.4222190380096436,
+                  3.4222190380096436,
+                  3.4222190380096436,
+                  3.4222190380096436,
+                  -0.7069758176803589,
+                  -0.7069758176803589,
+                  -0.1620095670223236,
+                  -0.1620095670223236,
+                  -0.1620095670223236,
+                  -0.13240300118923187,
+                  -0.13240300118923187,
+                  -0.13240300118923187,
+                  -1.6937612295150757,
+                  -1.6937612295150757,
+                  -1.6937612295150757,
+                  0.5759190849878473
+                ],
+                [
+                  -0.8547687530517578,
+                  -0.4514863193035126,
+                  -0.8481658101081848,
+                  -0.8454976677894592,
+                  -0.18657994270324707,
+                  -0.18657994270324707,
+                  -0.18657994270324707,
+                  -0.8425104022026062,
+                  -0.519984245300293,
+                  -0.3399360477924347,
+                  -0.17836858332157135,
+                  -0.46194541454315186,
+                  -0.648639976978302,
+                  -0.2254619151353836,
+                  -0.2254619151353836,
+                  -0.2254619151353836,
+                  -0.2254619151353836,
+                  6.597284317016602,
+                  6.597284317016602,
+                  0.08974458277225494,
+                  0.08974458277225494,
+                  0.08974458277225494,
+                  0.0898342952132225,
+                  0.0898342952132225,
+                  0.0898342952132225,
+                  -0.13921408355236053,
+                  -0.13921408355236053,
+                  -0.13921408355236053,
+                  0.8680494548605909
+                ],
+                [
+                  -1.1523702144622803,
+                  -0.5567766427993774,
+                  -1.1421449184417725,
+                  -1.1395397186279297,
+                  -0.23927129805088043,
+                  -0.23927129805088043,
+                  -0.23927129805088043,
+                  -1.1365035772323608,
+                  -5.281525135040283,
+                  -8.623366355895996,
+                  -0.46796706318855286,
+                  5.000812530517578,
+                  8.355155944824219,
+                  -0.28448909521102905,
+                  -0.28448909521102905,
+                  -0.28448909521102905,
+                  -0.28448909521102905,
+                  -0.5685897469520569,
+                  -0.5685897469520569,
+                  -0.07792910933494568,
+                  -0.07792910933494568,
+                  -0.07792910933494568,
+                  -0.06370750069618225,
+                  -0.06370750069618225,
+                  -0.06370750069618225,
+                  3.348686695098877,
+                  3.348686695098877,
+                  3.348686695098877,
+                  1.142876604860106
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "vi",
+        "chào"
+      ],
+      [
+        "vi",
+        "chào bạn"
+      ],
+      [
+        "vi",
+        "hi"
+      ],
+      [
+        "vi",
+        "giúp"
+      ],
+      [
+        "vi",
+        "bạn làm được gì"
+      ],
+      [
+        "vi",
+        "menu"
+      ],
+      [
+        "vi",
+        "báo cáo"
+      ],
+      [
+        "vi",
+        "báo cáo tổng chi tiêu"
+      ],
+      [
+        "vi",
+        "tình hình tài chính"
+      ],
+      [
+        "vi",
+        "giao dịch"
+      ],
+      [
+        "vi",
+        "3 giao dịch mới nhất"
+      ],
+      [
+        "vi",
+        "các giao dịch gần đây"
+      ],
+      [
+        "vi",
+        "chi tiêu"
+      ],
+      [
+        "vi",
+        "tổng chi tiêu"
+      ],
+      [
+        "vi",
+        "dạo này tiêu bao nhiêu"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "vi": {
+        "intent.greeting": [
+          {
+            "answer": "Chào bạn! Tôi có thể giúp gì cho bạn hôm nay?"
+          }
+        ],
+        "intent.help": [
+          {
+            "answer": "Tôi có thể: \n1. Báo cáo tài chính cá nhân (ví dụ: gõ \"báo cáo\") \n2. Trả lời các câu hỏi về tài chính (ví dụ: \"lạm phát là gì?\")"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

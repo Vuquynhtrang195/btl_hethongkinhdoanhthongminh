@@ -1,15 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
+
 import userRoutes from "./routes/userRoutes.js";
 import transactionRoutes from "./routes/transactionRoutes.js";
 import calendarRoutes from "./routes/calendarRoutes.js";
 import budgetRoutes from "./routes/budgetRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
-
+import chatbotRoutes from "./routes/chatbotRoutes.js";
+import dotenv from "dotenv";
 dotenv.config();
-
 const app = express();
 
 // ====== CORS ======
@@ -38,6 +38,7 @@ app.use("/api/transactions", transactionRoutes); // giao dịch
 app.use("/api/calendar", calendarRoutes); // Google Calendar
 app.use("/api/budgets", budgetRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/chatbot", chatbotRoutes); //
 
 // ====== MIDDLEWARE XỬ LÝ LỖI ======
 app.use((err, req, res, next) => {
