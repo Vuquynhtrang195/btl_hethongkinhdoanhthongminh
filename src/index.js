@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -7,6 +8,15 @@ import "./styles/base.css";
 import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+=======
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+>>>>>>> 005f4ac (Initialize project using Create React App)
 root.render(
   <React.StrictMode>
     <App />
