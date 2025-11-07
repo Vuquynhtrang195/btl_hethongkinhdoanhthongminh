@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import NavbarApp from "../components/NavbarApp";
 import axios from "axios";
 import "./NganSach.css";
@@ -9,8 +9,11 @@ export default function NganSach() {
   const [limit, setLimit] = useState("");
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(new Date().getFullYear());
+  const [prediction, setPrediction] = useState(null);
+  const [loadingPredict, setLoadingPredict] = useState(false);
 
-  const fetchBudgets = async () => {
+  // ✅ Dùng useCallback để tránh warning missing dependency
+  const fetchBudgets = useCallback(async () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
@@ -21,7 +24,7 @@ export default function NganSach() {
     } catch (err) {
       console.error("Lỗi khi tải ngân sách:", err);
     }
-  };
+  }, [month, year]);
 
   const addBudget = async () => {
     if (!category || !limit)
@@ -55,9 +58,26 @@ export default function NganSach() {
     }
   };
 
+  const predictNextMonth = async () => {
+    try {
+      setLoadingPredict(true);
+      const token = localStorage.getItem("token");
+      const res = await axios.get(
+        "http://localhost:5000/api/budgets/predict-next-month",
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setPrediction(res.data.data);
+    } catch (err) {
+      console.error("Lỗi khi dự đoán:", err);
+      alert("Không thể dự đoán ngân sách tháng sau!");
+    } finally {
+      setLoadingPredict(false);
+    }
+  };
+
   useEffect(() => {
     fetchBudgets();
-  }, [month, year]);
+  }, [fetchBudgets]);
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -164,6 +184,44 @@ export default function NganSach() {
             })}
           </div>
         )}
+        {/* 🔮 Phần dự đoán ngân sách tháng sau */}
+        <div className="predict-section">
+          <h3>🔮 Dự đoán ngân sách tháng sau</h3>
+          <button onClick={predictNextMonth} disabled={loadingPredict}>
+            {loadingPredict ? "Đang dự đoán..." : "✨ Xem dự đoán"}
+          </button>
+
+          {prediction && (
+            <div className="prediction-box">
+              <p>
+                <strong>Tổng chi dự kiến:</strong>{" "}
+                {prediction?.tong_chi_du_kien?.toLocaleString() || 0} VND
+              </p>
+              <p>
+                <strong>Tổng thu dự kiến:</strong>{" "}
+                {prediction?.tong_thu_du_kien?.toLocaleString() || 0} VND
+              </p>
+              <h4>🧩 Gợi ý phân bổ ngân sách:</h4>
+              <ul>
+                {prediction?.goi_y_ngan_sach
+                  ? Object.entries(prediction.goi_y_ngan_sach).map(([k, v]) => (
+                      <li key={k}>
+                        {k}: {v.toLocaleString()} VND
+                      </li>
+                    ))
+                  : "Không có dữ liệu"}
+              </ul>
+
+              {/* 💡 Lời khuyên tài chính */}
+              {prediction?.loi_khuyen && (
+                <div className="advice-box">
+                  <h4>💡 Lời khuyên tài chính:</h4>
+                  <p>{prediction.loi_khuyen}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </>
   );

@@ -13,6 +13,7 @@ import NganSach from "./pages/NganSach";
 import CaiDat from "./pages/CaiDat";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ImportCSV from "./pages/ImportCSV";
 import ForgotPassword from "./pages/ForgotPassword";
 import Chatbot from "./components/Chatbot";
 import { useEffect, useState } from "react";
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/sogiaodich" element={<SoGiaoDich />} />
                 <Route path="/nhacnho" element={<NhacNho />} />
                 <Route path="/ngansach" element={<NganSach />} />
+                <Route path="/import" element={<ImportCSV />} />
                 <Route path="/caidat" element={<CaiDat />} />
 
                 {/* Nếu user gõ sai đường dẫn thì tự quay về Dashboard */}
